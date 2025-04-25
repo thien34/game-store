@@ -1,5 +1,5 @@
 import Footer from '@/components/client/layouts/footer'
-import Header from '@/components/client/layouts/navbar'
+import HeaderWrapper from '@/components/client/layouts/HeaderWrapper'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -8,7 +8,7 @@ type LayoutProps = {
 export default function Layout({ children }: Readonly<LayoutProps>) {
   return (
     <div>
-      <Header />
+      <HeaderWrapper />
       {children}
       <Footer />
     </div>
