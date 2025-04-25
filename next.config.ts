@@ -20,7 +20,8 @@ const nextConfig: NextConfig = {
   pageExtensions: ['mdx', 'ts', 'tsx'],
   reactStrictMode: !isProd,
   images: {
-    minimumCacheTTL: isProd ? 31_536_000 : 86_400 // 1 year for prod, 1 day for dev
+    minimumCacheTTL: isProd ? 31_536_000 : 86_400, // 1 year for prod, 1 day for dev
+    domains: ['bggamingzone.com']
   },
   compress: isProd, // Enable gzip HTTP response compression for prod
   poweredByHeader: !isProd, // Remove X-Powered-By header in HTTP response for prod
