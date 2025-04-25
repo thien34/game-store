@@ -8,8 +8,9 @@ export function FooterDescription() {
     <div className={cn('max-w-[348px]')}>
       <div className={cn('mb-3 text-[13px] text-slate-600', 'dark:text-slate-400')}>About Me</div>
       <p className={cn('mb-4 leading-relaxed font-normal')}>
-        I&apos;m Khánh, passionate <strong>Fullstack Developer</strong> focused on building efficient, optimized, and
-        scalable applications.
+        I&apos;m Lorem ipsum dolor sit amet consectetur adipisicing elit. Et rerum, vitae deleniti sapiente optio
+        dolores perspiciatis magni voluptatibus? Beatae sequi cumque minima vel quod voluptate amet. Alias quam ad
+        architecto?.
       </p>
       <ul className={cn('-ml-2 flex gap-1')}>
         <li>
