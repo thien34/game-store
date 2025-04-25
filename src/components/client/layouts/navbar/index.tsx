@@ -6,6 +6,7 @@ import Nav from './Nav'
 import useOnScroll from '@/hooks/useOnScroll'
 import { cn } from '@/lib/utils'
 import UserAction from './UserAction'
+import Search from './Search'
 
 const navs: Navigation[] = []
 
@@ -21,11 +22,14 @@ const Header = () => {
     >
       <div className={cn('content-wrapper-max')}>
         <div className={cn('relative z-50 flex h-16 items-center justify-between px-2 text-sm', 'md:px-4')}>
-          <nav className={cn('flex', 'md:gap-2')}>
+          <nav className={cn('flex items-center gap-4', 'md:gap-6')}>
             <Logo />
             <Nav navs={navs} />
           </nav>
-          <UserAction />
+          <div className='flex items-center gap-4'>
+            <Search />
+            <UserAction />
+          </div>
         </div>
       </div>
     </header>
