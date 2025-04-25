@@ -3,18 +3,11 @@
 import { Navigation } from '@/types'
 import Logo from './Logo'
 import Nav from './Nav'
-import SocialLinks from './SocialLinks'
 import useOnScroll from '@/hooks/useOnScroll'
 import { cn } from '@/lib/utils'
+import UserAction from './UserAction'
 
-const navs: Navigation[] = [
-  { id: 1, label: 'Projects', href: '/projects', type: 0 },
-  { id: 2, label: 'Blog', href: '/blog', type: 0 },
-  { id: 3, label: 'T.I.L', href: '/project', type: 0 },
-  { id: 4, label: 'Skills & Tools', href: '/work/skills-and-tools', type: 1 },
-  { id: 5, label: 'Experience', href: '/work/experience', type: 1 },
-  { id: 6, label: 'Contact', href: '/work/contact', type: 1 }
-]
+const navs: Navigation[] = []
 
 const Header = () => {
   const isScrolled = useOnScroll(0)
@@ -32,7 +25,7 @@ const Header = () => {
             <Logo />
             <Nav navs={navs} />
           </nav>
-          <SocialLinks />
+          <UserAction />
         </div>
       </div>
     </header>
