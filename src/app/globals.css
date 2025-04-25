@@ -1,0 +1,134 @@
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Colors */
+  --color-purple-700: rgb(109, 40, 217);
+  --color-purple-600: rgb(124, 58, 237);
+  --color-purple-500: rgb(139, 92, 246);
+  --color-purple-400: rgb(167, 139, 250);
+  --color-blue-600: rgb(33, 99, 235);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  /* Font families */
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+.content-wrapper {
+  @apply mx-auto max-w-[75rem] px-4;
+  @apply sm:px-12 md:px-10 lg:px-16 xl:px-6;
+}
+
+.content-wrapper-max {
+  @apply mx-auto max-w-[120rem];
+}
+
+.nav-link {
+  @apply rounded-xl text-[13px] font-bold;
+}
+
+.footer-link {
+  @apply flex h-8 items-center gap-2 text-sm whitespace-nowrap text-slate-900;
+  @apply dark:text-slate-200;
+}
+
+.footer-link__label {
+  @apply rounded-full border px-2 py-1 text-[10px] text-slate-900 uppercase;
+  @apply dark:text-slate-200;
+}
+
+.footer-link--soon {
+  @apply cursor-not-allowed text-slate-500;
+  @apply dark:text-slate-400;
+}
+
+.background-grid {
+  @apply relative z-0 bg-slate-100;
+  @apply dark:bg-[#0c1222];
+}
+
+.background-grid::before {
+  @apply absolute inset-0 z-[-1] content-[''];
+  background-image: url('/images/grid.svg');
+  mask-image: linear-gradient(transparent, black, transparent);
+}
+
+.background-grid--fade-in {
+  @apply bg-transparent bg-gradient-to-t from-slate-100 via-slate-100;
+  @apply dark:bg-transparent dark:from-[#0c1222] dark:via-[#0c1222];
+}
+
+.background-grid--fade-in::before {
+  @apply bg-left-bottom;
+  mask-image: linear-gradient(transparent, black, black);
+}
+
+.background-grid--fade-out {
+  @apply bg-transparent bg-gradient-to-b from-slate-100 via-slate-100;
+  @apply dark:bg-transparent dark:from-[#0c1222] dark:via-[#0c1222];
+}
+
+.background-grid--fade-out::before {
+  mask-image: linear-gradient(black, black, transparent);
+}
+
+.background-image--fade-out {
+  mask-image: linear-gradient(black, black, transparent);
+}
+
+.button {
+  @apply inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent px-4 text-center text-sm font-bold transition duration-150;
+  @apply md:h-12 md:rounded-xl md:px-6;
+}
+
+.button--solid {
+  @apply bg-purple-600 text-white;
+  @apply hover:bg-purple-700;
+  @apply dark:bg-purple-600 dark:hover:bg-purple-500;
+}
+
+.button--ghost {
+  @apply text-slate-600;
+  @apply hover:text-slate-700;
+  @apply dark:text-slate-400 dark:hover:text-slate-300;
+}
+
+.button--outline {
+  @apply hover:bg-slate-200/40 dark:hover:bg-slate-600/10;
+}
+
+.button--soft {
+  @apply rounded-full bg-purple-600/[0.08] px-5 font-bold text-purple-600;
+  @apply dark:bg-purple-400/10 dark:font-semibold dark:text-purple-400;
+}
+
+.button--underline {
+  @apply relative;
+}
+
+.button--underline::after {
+  @apply absolute right-2 bottom-1 left-2 border-b-2 border-dotted border-slate-600/50 content-[''];
+  @apply dark:border-slate-400/50;
+}
